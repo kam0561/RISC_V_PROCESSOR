@@ -1,7 +1,8 @@
 Vivado Simulator 2020.2
 Time resolution is 1 ps
-Time=0 | Operand1=         0, Operand2=         0, Opcode=0000, Result=         0
-Time=10000 | Operand1=        20, Operand2=        40, Opcode=0000, Result=        60
-Time=20000 | Operand1=        20, Operand2=        40, Opcode=1000, Result=4294967276
-Time=30000 | Operand1=        60, Operand2=        50, Opcode=0000, Result=       110
-$finish called at time : 130 ns : File "C:/AB/Coding/verilog/project/RISC_V_PROCESSOR/riscvpro/riscvpro.srcs/sim_1/new/msrv32_alu_tb.v" Line 66
+Inputs rd_in=         0, rs1_addr= 0, rs2_addr= 0, write_en=0, Outputs rs_l_out=         x, rs_2_out=         x
+Inputs rd_in=         0, rs1_addr= 0, rs2_addr= 0, write_en=0, Outputs rs_l_out=         0, rs_2_out=         0
+Inputs rd_in=        30, rs1_addr= 0, rs2_addr= 0, write_en=1, Outputs rs_l_out=         0, rs_2_out=         0
+Inputs rd_in=        50, rs1_addr= 0, rs2_addr= 0, write_en=1, Outputs rs_l_out=         0, rs_2_out=         0
+Inputs rd_in=        50, rs1_addr= 6, rs2_addr= 5, write_en=0, Outputs rs_l_out=        50, rs_2_out=        30
+$finish called at time : 170 ns : File "C:/AB/Coding/verilog/project/RISC_V_PROCESSOR/riscvpro/riscvpro.srcs/sim_1/new/msrv32_integer_file_tb.v" Line 101

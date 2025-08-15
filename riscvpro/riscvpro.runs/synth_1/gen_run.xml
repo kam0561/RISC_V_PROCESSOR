@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1755197473">
   <File Type="PA-TCL" Name="msrv32_alu.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="msrv32_alu_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="msrv32_alu_reports.tcl"/>
   <File Type="RDS-RDS" Name="msrv32_alu.vds"/>
   <File Type="RDS-UTIL" Name="msrv32_alu_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="msrv32_alu_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="msrv32_alu.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="msrv32_alu_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="msrv32_alu_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/msrv32_alu.v">
