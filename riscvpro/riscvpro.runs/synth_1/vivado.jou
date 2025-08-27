@@ -2,11 +2,11 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Fri Aug 15 00:21:15 2025
-# Process ID: 23732
+# Start of session at: Wed Aug 27 17:38:12 2025
+# Process ID: 2596
 # Current directory: C:/AB/Coding/verilog/project/RISC_V_PROCESSOR/riscvpro/riscvpro.runs/synth_1
-# Command line: vivado.exe -log msrv32_alu.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source msrv32_alu.tcl
-# Log file: C:/AB/Coding/verilog/project/RISC_V_PROCESSOR/riscvpro/riscvpro.runs/synth_1/msrv32_alu.vds
+# Command line: vivado.exe -log msrv32_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source msrv32_top.tcl
+# Log file: C:/AB/Coding/verilog/project/RISC_V_PROCESSOR/riscvpro/riscvpro.runs/synth_1/msrv32_top.vds
 # Journal file: C:/AB/Coding/verilog/project/RISC_V_PROCESSOR/riscvpro/riscvpro.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source msrv32_alu.tcl -notrace
+source msrv32_top.tcl -notrace

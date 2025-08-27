@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/AB/Coding/verilog/project/RISC_V_PROCESSOR/riscvpro/riscvpro.runs/synth_1'
+HD_PWD='C:/AB/Coding/verilog/project/RISC_V_PROCESSOR/riscvpro/riscvpro.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -40,4 +40,8 @@ EAStep()
      fi
 }
 
-EAStep vivado -log msrv32_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source msrv32_top.tcl
+# pre-commands:
+/bin/touch .init_design.begin.rst
+EAStep vivado -log msrv32_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source msrv32_top.tcl -notrace
+
+

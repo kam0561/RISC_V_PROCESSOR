@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1755282709">
-  <File Type="PA-TCL" Name="msrv32_alu.tcl"/>
-  <File Type="REPORTS-TCL" Name="msrv32_alu_reports.tcl"/>
-  <File Type="RDS-RDS" Name="msrv32_alu.vds"/>
-  <File Type="RDS-UTIL" Name="msrv32_alu_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="msrv32_alu_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="msrv32_alu.dcp"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1756296489">
+  <File Type="PA-TCL" Name="msrv32_top.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="msrv32_top_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="msrv32_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="msrv32_top.vds"/>
+  <File Type="RDS-UTIL" Name="msrv32_top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="msrv32_top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="msrv32_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="msrv32_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="msrv32_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/msrv32_alu.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/msrv32_integer_file.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -15,9 +25,8 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/msrv32_alu.v">
+    <File Path="$PSRCDIR/sources_1/new/msrv32_top.v">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -25,7 +34,7 @@
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="msrv32_integer_file"/>
+      <Option Name="TopModule" Val="msrv32_top"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

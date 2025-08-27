@@ -22,8 +22,12 @@ var ISEJScriptLib = RDScrDir + "/ISEWrap.js";
 eval( EAInclude(ISEJScriptLib) );
 
 
+// pre-commands:
+ISETouchFile( "init_design", "begin" );
 ISEStep( "vivado",
-         "-log msrv32_top.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source msrv32_top.tcl" );
+         "-log msrv32_top.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source msrv32_top.tcl -notrace" );
+
+
 
 
 
