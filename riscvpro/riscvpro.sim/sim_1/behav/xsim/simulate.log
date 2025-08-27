@@ -1,8 +1,145 @@
 Vivado Simulator 2020.2
 Time resolution is 1 ps
-Inputs rd_in=         0, rs1_addr= 0, rs2_addr= 0, write_en=0, Outputs rs_l_out=         x, rs_2_out=         x
-Inputs rd_in=         0, rs1_addr= 0, rs2_addr= 0, write_en=0, Outputs rs_l_out=         0, rs_2_out=         0
-Inputs rd_in=        30, rs1_addr= 0, rs2_addr= 0, write_en=1, Outputs rs_l_out=         0, rs_2_out=         0
-Inputs rd_in=        50, rs1_addr= 0, rs2_addr= 0, write_en=1, Outputs rs_l_out=         0, rs_2_out=         0
-Inputs rd_in=        50, rs1_addr= 6, rs2_addr= 5, write_en=0, Outputs rs_l_out=        50, rs_2_out=        30
-$finish called at time : 170 ns : File "C:/AB/Coding/verilog/project/RISC_V_PROCESSOR/riscvpro/riscvpro.srcs/sim_1/new/msrv32_integer_file_tb.v" Line 101
+=== MSRV32 Processor Testbench ===
+Starting simulation...
+Time: 0 | PC: 0x00000000 | Instr: 0x00a00093 | Reset: 1
+Time: 45000 | PC: 0x00000004 | Instr: 0x01400113 | Reset: 0
+Time: 55000 | PC: 0x00000008 | Instr: 0x002081b3 | Reset: 0
+
+--- Test 1: Basic Arithmetic ---
+Time: 65000 | PC: 0x0000000c | Instr: 0x40110233 | Reset: 0
+Time: 75000 | PC: 0x00000010 | Instr: 0xff000293 | Reset: 0
+Time: 85000 | PC: 0x00000014 | Instr: 0x0050f333 | Reset: 0
+Time: 95000 | PC: 0x00000018 | Instr: 0x0050e3b3 | Reset: 0
+Time: 105000 | PC: 0x0000001c | Instr: 0x0050c433 | Reset: 0
+Time: 115000 | PC: 0x00000020 | Instr: 0x00209493 | Reset: 0
+Time: 125000 | PC: 0x00000024 | Instr: 0x0010d513 | Reset: 0
+Time: 135000 | PC: 0x00000028 | Instr: 0x0020a5b3 | Reset: 0
+Time: 145000 | PC: 0x0000002c | Instr: 0x00113633 | Reset: 0
+Time: 155000 | PC: 0x00000030 | Instr: 0x123456b7 | Reset: 0
+Testing: ADDI x1, x0, 10
+Time: 165000 | PC: 0x00000034 | Instr: 0x06302223 | Reset: 0
+PASS: x1 = 0x0000000a
+Testing: ADDI x2, x0, 20
+Time: 175000 | PC: 0x00000038 | Instr: 0x06402703 | Reset: 0
+FAIL: x2 = 0x00000000 (expected 0x00000014)
+Testing: ADD x3, x1, x2
+Time: 185000 | PC: 0x0000003c | Instr: 0x00108093 | Reset: 0
+FAIL: x3 = 0x0000000a (expected 0x0000001e)
+Testing: SUB x4, x2, x1
+Time: 195000 | PC: 0x00000040 | Instr: 0x03200793 | Reset: 0
+FAIL: x4 = 0x00000000 (expected 0x0000000a)
+
+--- Test 2: Logical Operations ---
+Time: 205000 | PC: 0x00000044 | Instr: 0xfef09ae3 | Reset: 0
+Time: 215000 | PC: 0x00000048 | Instr: 0x0080086f | Reset: 0
+Time: 225000 | PC: 0x00000000 | Instr: 0x00a00093 | Reset: 0
+Time: 235000 | PC: 0x00000038 | Instr: 0x06402703 | Reset: 0
+Time: 245000 | PC: 0x0000003c | Instr: 0x00108093 | Reset: 0
+Time: 255000 | PC: 0x00000040 | Instr: 0x03200793 | Reset: 0
+Time: 265000 | PC: 0x00000044 | Instr: 0xfef09ae3 | Reset: 0
+Time: 275000 | PC: 0x00000048 | Instr: 0x0080086f | Reset: 0
+Time: 285000 | PC: 0x00000000 | Instr: 0x00a00093 | Reset: 0
+Time: 295000 | PC: 0x00000038 | Instr: 0x06402703 | Reset: 0
+Testing: ADDI x5, x0, -16
+Time: 305000 | PC: 0x0000003c | Instr: 0x00108093 | Reset: 0
+FAIL: x5 = 0x00000000 (expected 0xfffffff0)
+Testing: AND x6, x1, x5
+Time: 315000 | PC: 0x00000040 | Instr: 0x03200793 | Reset: 0
+FAIL: x6 = 0x0000000a (expected 0x00000000)
+Testing: OR x7, x1, x5
+Time: 325000 | PC: 0x00000044 | Instr: 0xfef09ae3 | Reset: 0
+FAIL: x7 = 0x0000000a (expected 0xfffffffa)
+Testing: XOR x8, x1, x5
+Time: 335000 | PC: 0x00000048 | Instr: 0x0080086f | Reset: 0
+FAIL: x8 = 0x0000000a (expected 0xfffffffa)
+
+--- Test 3: Shift Operations ---
+Time: 345000 | PC: 0x00000000 | Instr: 0x00a00093 | Reset: 0
+Time: 355000 | PC: 0x00000038 | Instr: 0x06402703 | Reset: 0
+Time: 365000 | PC: 0x0000003c | Instr: 0x00108093 | Reset: 0
+Time: 375000 | PC: 0x00000040 | Instr: 0x03200793 | Reset: 0
+Time: 385000 | PC: 0x00000044 | Instr: 0xfef09ae3 | Reset: 0
+Testing: SLLI x9, x1, 2
+Time: 395000 | PC: 0x00000048 | Instr: 0x0080086f | Reset: 0
+FAIL: x9 = 0x00000002 (expected 0x00000028)
+Testing: SRLI x10, x1, 1
+Time: 405000 | PC: 0x00000000 | Instr: 0x00a00093 | Reset: 0
+FAIL: x10 = 0x00000000 (expected 0x00000005)
+
+--- Test 4: Comparisons ---
+Time: 415000 | PC: 0x00000038 | Instr: 0x06402703 | Reset: 0
+Time: 425000 | PC: 0x0000003c | Instr: 0x00108093 | Reset: 0
+Time: 435000 | PC: 0x00000040 | Instr: 0x03200793 | Reset: 0
+Time: 445000 | PC: 0x00000044 | Instr: 0xfef09ae3 | Reset: 0
+Time: 455000 | PC: 0x00000048 | Instr: 0x0080086f | Reset: 0
+Testing: SLT x11, x1, x2
+Time: 465000 | PC: 0x00000000 | Instr: 0x00a00093 | Reset: 0
+FAIL: x11 = 0x00000000 (expected 0x00000001)
+Testing: SLTU x12, x2, x1
+Time: 475000 | PC: 0x00000038 | Instr: 0x06402703 | Reset: 0
+PASS: x12 = 0x00000000
+
+--- Test 5: LUI ---
+Time: 485000 | PC: 0x0000003c | Instr: 0x00108093 | Reset: 0
+Time: 495000 | PC: 0x00000040 | Instr: 0x03200793 | Reset: 0
+Time: 505000 | PC: 0x00000044 | Instr: 0xfef09ae3 | Reset: 0
+Time: 515000 | PC: 0x00000048 | Instr: 0x0080086f | Reset: 0
+Time: 525000 | PC: 0x00000000 | Instr: 0x00a00093 | Reset: 0
+Testing: LUI x13, 0x12345
+Time: 535000 | PC: 0x00000038 | Instr: 0x06402703 | Reset: 0
+FAIL: x13 = 0x1234500a (expected 0x12345000)
+
+--- Test 6: Memory Operations ---
+Time: 545000 | PC: 0x0000003c | Instr: 0x00108093 | Reset: 0
+Time: 555000 | PC: 0x00000040 | Instr: 0x03200793 | Reset: 0
+Time: 565000 | PC: 0x00000044 | Instr: 0xfef09ae3 | Reset: 0
+Time: 575000 | PC: 0x00000048 | Instr: 0x0080086f | Reset: 0
+Time: 585000 | PC: 0x00000000 | Instr: 0x00a00093 | Reset: 0
+Time: 595000 | PC: 0x00000038 | Instr: 0x06402703 | Reset: 0
+Time: 605000 | PC: 0x0000003c | Instr: 0x00108093 | Reset: 0
+Time: 615000 | PC: 0x00000040 | Instr: 0x03200793 | Reset: 0
+Time: 625000 | PC: 0x00000044 | Instr: 0xfef09ae3 | Reset: 0
+Time: 635000 | PC: 0x00000048 | Instr: 0x0080086f | Reset: 0
+Testing: SW x3, 100(x0)
+FAIL: MEM[0x00000064] = 0x0000000a (expected 0x0000001e)
+Testing: LW x14, 100(x0)
+Time: 645000 | PC: 0x00000000 | Instr: 0x00a00093 | Reset: 0
+FAIL: x14 = 0x00000064 (expected 0x0000001e)
+
+--- Test 7: Branch Test ---
+Time: 655000 | PC: 0x00000038 | Instr: 0x06402703 | Reset: 0
+Time: 665000 | PC: 0x0000003c | Instr: 0x00108093 | Reset: 0
+Time: 675000 | PC: 0x00000040 | Instr: 0x03200793 | Reset: 0
+Time: 685000 | PC: 0x00000044 | Instr: 0xfef09ae3 | Reset: 0
+Time: 695000 | PC: 0x00000048 | Instr: 0x0080086f | Reset: 0
+Time: 705000 | PC: 0x00000000 | Instr: 0x00a00093 | Reset: 0
+Time: 715000 | PC: 0x00000038 | Instr: 0x06402703 | Reset: 0
+Time: 725000 | PC: 0x0000003c | Instr: 0x00108093 | Reset: 0
+Time: 735000 | PC: 0x00000040 | Instr: 0x03200793 | Reset: 0
+Time: 745000 | PC: 0x00000044 | Instr: 0xfef09ae3 | Reset: 0
+Time: 755000 | PC: 0x00000048 | Instr: 0x0080086f | Reset: 0
+Time: 765000 | PC: 0x00000000 | Instr: 0x00a00093 | Reset: 0
+Time: 775000 | PC: 0x00000038 | Instr: 0x06402703 | Reset: 0
+Time: 785000 | PC: 0x0000003c | Instr: 0x00108093 | Reset: 0
+Time: 795000 | PC: 0x00000040 | Instr: 0x03200793 | Reset: 0
+Time: 805000 | PC: 0x00000044 | Instr: 0xfef09ae3 | Reset: 0
+Time: 815000 | PC: 0x00000048 | Instr: 0x0080086f | Reset: 0
+Time: 825000 | PC: 0x00000000 | Instr: 0x00a00093 | Reset: 0
+Time: 835000 | PC: 0x00000038 | Instr: 0x06402703 | Reset: 0
+Time: 845000 | PC: 0x0000003c | Instr: 0x00108093 | Reset: 0
+Time: 855000 | PC: 0x00000040 | Instr: 0x03200793 | Reset: 0
+Time: 865000 | PC: 0x00000044 | Instr: 0xfef09ae3 | Reset: 0
+Time: 875000 | PC: 0x00000048 | Instr: 0x0080086f | Reset: 0
+Time: 885000 | PC: 0x00000000 | Instr: 0x00a00093 | Reset: 0
+Time: 895000 | PC: 0x00000038 | Instr: 0x06402703 | Reset: 0
+Time: 905000 | PC: 0x0000003c | Instr: 0x00108093 | Reset: 0
+Time: 915000 | PC: 0x00000040 | Instr: 0x03200793 | Reset: 0
+Time: 925000 | PC: 0x00000044 | Instr: 0xfef09ae3 | Reset: 0
+Time: 935000 | PC: 0x00000048 | Instr: 0x0080086f | Reset: 0
+Time: 945000 | PC: 0x00000000 | Instr: 0x00a00093 | Reset: 0
+Time: 955000 | PC: 0x00000038 | Instr: 0x06402703 | Reset: 0
+Time: 965000 | PC: 0x0000003c | Instr: 0x00108093 | Reset: 0
+Time: 975000 | PC: 0x00000040 | Instr: 0x03200793 | Reset: 0
+Time: 985000 | PC: 0x00000044 | Instr: 0xfef09ae3 | Reset: 0
+Time: 995000 | PC: 0x00000048 | Instr: 0x0080086f | Reset: 0

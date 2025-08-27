@@ -1,0 +1,12 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../riscvpro.srcs/sources_1/new/msrv32_alu.v" \
+"../../../../riscvpro.srcs/sources_1/new/msrv32_integer_file.v" \
+"../../../../riscvpro.srcs/sources_1/new/msrv32_top.v" \
+"../../../../riscvpro.srcs/sim_1/new/msrv32_toptb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
